@@ -1,34 +1,38 @@
-const auth = (state = [], action) => {
+const initialState = {
+    user: {
+        isLoggedIn: localStorage.getItem('isLoggedIn'),
+        username: '',
+        password: '',
+        token: null
+    }
+}
+
+
+const auth = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOGIN':
-      return [
-        ...state,
-        {
-          isLoggedIn: false,
-          username: action.username,
-          password: action.password,
-          token: {}
-        }
-      ]
-    case 'GET_TOKEN':
-      return [
-          ...state,
-          {
-            isLoggedIn: true,
-            token: action.token
+        case 'LOGIN':
+          localStorage.setItem('isLoggedIn', true);
+          return {
+              ...state,
+              user: {
+                  isLoggedIn: true,
+                  username: action.payload.username,
+                  password: action.payload.password,
+              }
           }
-      ]
-    case 'LOGOUT':
-      return [
-          ...state,
-          {
-            isLoggedIn: false,
-            token: {}
-          }
-      ]
-    default:
-      return state
-  }
+
+        case 'LOGOUT':
+            localStorage.removeItem('isLoggedIn');
+            return {
+                ...state,
+                user: {
+                    isLoggedIn: false,
+                }
+            }
+
+        default:
+            return state
+  };
 }
 
 export default auth

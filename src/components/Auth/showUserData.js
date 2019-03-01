@@ -1,18 +1,24 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-const UserData = ({ data }) => (
-  <div>
-      <h1>User Data</h1>
-      <h3>isLoggedIn: {data.isLoggedIn}</h3>
-      <h3>Username: {data.username}</h3>
-      <h3>password: {data.username}</h3>
-      <h3>Token: {data.token}</h3>
-  </div>
-)
 
-UserData.propTypes = {
-  data: PropTypes.func.isRequired,
+export default class showUserData extends Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+  }
+
+  render () {
+    const {data} = this.props;
+    return (
+       <div> Users Data
+          <div>
+            <h3>User Data</h3>
+            <p>isLoggedIn: {data.isLoggedIn ? 'true' : 'false'}</p>
+            <p>Username: {data.username}</p>
+            <p>password: {data.password}</p>
+          </div>
+      </div>
+    );
+  }
+
 }
-
-export default UserData

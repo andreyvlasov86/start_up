@@ -1,14 +1,29 @@
-import React from 'react'
-import Footer from './Todo/Footer'
-import AddTodo from '../containers/Todo/AddTodo'
-import VisibleTodoList from '../containers/Todo/VisibleTodoList'
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import Main from '../containers/main';
+import Login from '../containers/Auth/Login'
 
-const App = () => (
-  <div>
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
-  </div>
-)
 
-export default App
+const mapStateToProps = state => {
+    console.log('state_auth', state.auth);
+    return (
+        {data: state.auth.user }
+    )
+};
+
+
+class App extends Component {
+
+        constructor(props) {
+                super(props);
+        }
+
+        render() {
+                const isLoggedIn = this.props.data.isLoggedIn;
+                return(
+                    isLoggedIn ? <Main /> : <Login />
+                )
+        }
+}
+
+export default connect(mapStateToProps)(App);

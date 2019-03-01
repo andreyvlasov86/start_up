@@ -1,27 +1,71 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import {bindActionCreators} from 'redux';
 import { login } from '../../actions/Auth'
 
-let Login = ({ dispatch }) => {
-    let input
 
-    const handlerSubmit = () => {
-        dispatch(login(this.state))
+class Login extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        };
     }
 
-    return (
-    <div>
-      <form
-        onSubmit={handlerSubmit()}
-        >
-        <input type='email' placeholder='Username'/>
-        <input type='password' placeholder='Password'/>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  )
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        if (this.state.username && this.state.password) {
+             this.props.login(this.state.username, this.state.password)
+        }
+
+    }
+
+    render() {
+        return (
+            <div className='App-header'>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <div className="form-group">
+                        <label
+                            className='col-form-label-sm'
+                            htmlFor="email">
+                            Email
+                        </label>
+                        <input
+                            className='form-control form-control-sm'
+                            id='email'
+                            type='email'
+                            name='username'
+                            onChange={this.handleChange.bind(this)}
+                            placeholder='Email'/>
+                        <label
+                            className='col-form-label-sm'
+                            htmlFor="password">
+                            Passwords
+                        </label>
+                        <input className='form-control form-control-sm'
+                               id='password'
+                               type='password'
+                               name='password'
+                               onChange={this.handleChange.bind(this)}
+                               placeholder='Password'/>
+                        <button className='btn btn-primary btn-sm' type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        )
+    }
 }
 
-Login = connect()(Login)
+const mapDispatchToProps = dispatch => bindActionCreators({
+    login
+    }, dispatch);
 
-export default Login
+export default connect(null, mapDispatchToProps)(Login);
