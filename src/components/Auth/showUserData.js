@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import Logout from "../../containers/Auth/Logout";
 
 
 export default class showUserData extends Component {
@@ -11,6 +12,7 @@ export default class showUserData extends Component {
     const {data} = this.props;
     return (
        <div> Users Data
+         <Logout />
           <div>
             <h3>User Data</h3>
             <p>isLoggedIn: {data.isLoggedIn ? 'true' : 'false'}</p>

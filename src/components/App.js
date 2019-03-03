@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import Main from '../containers/main';
+import Body from '../containers/body';
 import Login from '../containers/Auth/Login'
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 
 const mapStateToProps = state => {
-    console.log('state_auth', state.auth);
+    console.log('state', state);
     return (
         {data: state.auth.user }
     )
@@ -21,7 +23,7 @@ class App extends Component {
         render() {
                 const isLoggedIn = this.props.data.isLoggedIn;
                 return(
-                    isLoggedIn ? <Main /> : <Login />
+                    isLoggedIn ? <Router><Body /></Router> : <Login />
                 )
         }
 }
