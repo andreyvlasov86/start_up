@@ -81,8 +81,19 @@ code {
 }
 
 .footer-link a {
+  margin-left: 10px;
+  background: white;
+  font-size: large;
+  font-weight: bold;
+  padding: 2px;
+}
+
+.comp-i {
   color: red;
-  padding-left: 10px;
+}
+
+.comp {
+  color: black;
 }
 
 .main-container {
