@@ -5,10 +5,10 @@ const initialState = {
         password: '',
         token: null
     }
-}
-
+};
 
 const auth = (state = initialState, action) => {
+
     switch (action.type) {
         case 'LOGIN':
             const credentials = {
@@ -22,7 +22,6 @@ const auth = (state = initialState, action) => {
                 },
                 options: {
                   bodyFormat: 'json',
-                  authorizationMethod: 'body',
                 }
             };
 
@@ -33,10 +32,15 @@ const auth = (state = initialState, action) => {
               scope: 'read write',
             };
 
-            const auth = oauth2.ownerPassword.getToken(tokenConfig);
-            const token = oauth2.accessToken.create(auth);
+            const token = (async () => {
+                const result = await oauth2.ownerPassword.getToken(tokenConfig);
+                console.log('getToken', result);
+                const token = oauth2.accessToken.create(result);
+                console.log('token', token);
+                return result
+            })();
 
-            localStorage.setItem('isLoggedIn', true)
+            localStorage.setItem('isLoggedIn', true);
             return {
                 ...state,
                 user: {
