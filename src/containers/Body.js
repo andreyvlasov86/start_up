@@ -21,7 +21,20 @@ export default class Body extends Component {
 				path={route.path}
 				component={route.component}
 			/>
-		))
+		));
+
+		const subroutes  = routerConfig.map(route => (
+			route.subitems.map(subitem => (
+					<Route
+						key={subitem.id}
+						path={subitem.path}
+						component={subitem.component}
+					/>
+				))
+			));
+
+		routes.push(...subroutes);
+		console.log('routes', routes)
 
 		return (
 			<div>

@@ -110,5 +110,6 @@ code {
 }
 
 .content-container {
-  padding: 10px
+  padding: 10px;
+  min-height: 90vh;
 }
