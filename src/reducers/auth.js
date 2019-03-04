@@ -1,8 +1,3 @@
-'use strict';
-
-//import {json} from 'express';
-
-
 const initialState = {
     user: {
         isLoggedIn: localStorage.getItem('isLoggedIn'),
@@ -38,13 +33,8 @@ const auth = (state = initialState, action) => {
               scope: 'read write',
             };
 
-            const auth = fetch(oauth2.ownerPassword.getToken(tokenConfig));
-
-            console.log('auth', auth);
-
+            const auth = oauth2.ownerPassword.getToken(tokenConfig);
             const token = oauth2.accessToken.create(auth);
-
-            console.log('token', token);
 
             localStorage.setItem('isLoggedIn', true)
             return {
@@ -54,7 +44,7 @@ const auth = (state = initialState, action) => {
                     username: action.payload.username,
                     password: action.payload.password,
                     token: token
-                } && token
+                }
             };
 
 
