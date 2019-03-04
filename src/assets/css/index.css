@@ -70,7 +70,7 @@ code {
   background-color: #282c34;
   min-height: 5vh;
   display: flex;
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0;
   color: white;
 }

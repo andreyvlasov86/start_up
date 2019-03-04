@@ -23,18 +23,18 @@ export default class Body extends Component {
 			/>
 		));
 
-		const subroutes  = routerConfig.map(route => (
+		routerConfig.map(route => (
 			route.subitems.map(subitem => (
+				routes.push(
 					<Route
 						key={subitem.id}
 						path={subitem.path}
 						component={subitem.component}
-					/>
+					/>)
 				))
 			));
 
-		routes.push(...subroutes);
-		console.log('routes', routes)
+		console.log('routes', routes);
 
 		return (
 			<div>
@@ -44,7 +44,7 @@ export default class Body extends Component {
 						<div className='col-lg-auto App-navigation'>
 							<Navigation />
 						</div>
-						<div className='col-lg content-container'>
+						<div className='col-lg col-xs content-container'>
 							{routes}
 						</div>
 					</div>

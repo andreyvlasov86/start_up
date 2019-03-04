@@ -35,16 +35,16 @@ class Login extends Component {
                     <div className="form-group">
                         <label
                             className='col-form-label-sm'
-                            htmlFor="email">
+                            htmlFor="username">
                             Email
                         </label>
                         <input
                             className='form-control form-control-sm'
-                            id='email'
-                            type='email'
+                            id='username'
+                            type='username'
                             name='username'
                             onChange={this.handleChange.bind(this)}
-                            placeholder='Email'/>
+                            placeholder='Username'/>
                         <label
                             className='col-form-label-sm'
                             htmlFor="password">
