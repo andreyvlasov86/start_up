@@ -70,7 +70,7 @@ code {
   background-color: #282c34;
   min-height: 5vh;
   display: flex;
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0;
   color: white;
 }
@@ -110,5 +110,6 @@ code {
 }
 
 .content-container {
-  padding: 10px
+  padding: 10px;
+  min-height: 90vh;
 }

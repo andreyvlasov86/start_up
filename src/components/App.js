@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import Body from '../containers/body';
+import Body from '../containers/Body';
 import Login from '../containers/Auth/Login'
 import { BrowserRouter as Router } from 'react-router-dom';
 

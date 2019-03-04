@@ -1,7 +1,7 @@
-export const login = (username, password) => ({
+export const login = (username, password, token) => ({
   type: 'LOGIN',
   payload: {
-      token: {},
+      token,
       username,
       password,
       isLoggedIn: false
