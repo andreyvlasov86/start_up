@@ -36,7 +36,7 @@ class Login extends Component {
                         <label
                             className='col-form-label-sm'
                             htmlFor="username">
-                            Email
+                            Username
                         </label>
                         <input
                             className='form-control form-control-sm'
