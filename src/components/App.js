@@ -21,9 +21,9 @@ class App extends Component {
         }
 
         render() {
-                const isLoggedIn = this.props.data.isLoggedIn;
+                const token = this.props.data.token;
                 return(
-                    isLoggedIn ? <Router><Body /></Router> : <Login />
+                    token ? <Router><Body /></Router> : <Login />
                 )
         }
 }

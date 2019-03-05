@@ -13,7 +13,7 @@ class Logout extends Component {
 
     handleClick(e) {
         //e.preventDefault();
-        this.props.logout(false)
+        this.props.logout()
     }
 
     render() {

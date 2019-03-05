@@ -1,16 +1,14 @@
-export const login = (username, password, token) => ({
+export const login = (username, password) => ({
   type: 'LOGIN',
   payload: {
-      token,
       username,
       password,
-      isLoggedIn: false
   }
 });
 
-export const logout = (isLoggedIn) => ({
+export const logout = (token) => ({
   type: 'LOGOUT',
   payload: {
-      isLoggedIn
+      token
   }
 });
