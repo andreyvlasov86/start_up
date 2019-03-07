@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import Body from './Body';
-import Login from '../../components/Auth/Login'
+import Login from '../../components/Common/Auth/Login/Login';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Layout from "../Layout/Layout";
 
 
 
@@ -23,7 +23,7 @@ class App extends Component {
         render() {
                 const token = this.props.data.token;
                 return(
-                    token ? <Router><Body /></Router> : <Login />
+                    token ? <Router><Layout /></Router> : <Login />
                 )
         }
 }

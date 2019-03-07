@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DataTableView from '../../components/Common/DataTable';
+import DataTableView from '../../Common/DataTable/DataTable';
 
 
 class usersList extends Component {
@@ -70,7 +70,7 @@ class usersList extends Component {
       ],
     };
 
-    const header =
+    const headers =
         <tr>
           <th></th>
           <th data-data='id'>ID</th>
@@ -88,7 +88,7 @@ class usersList extends Component {
         return (
             <DataTableView
                 config={config}
-                header={header}
+                header={headers}
             />
         )
     }

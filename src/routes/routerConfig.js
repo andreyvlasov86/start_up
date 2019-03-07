@@ -1,6 +1,6 @@
-import UserData from '../containers/Users/userData';
-import usersList from '../containers/Users/usersList';
-import DogsApp from '../components/Dogs/'
+import UserData from '../components/Pages/Users/userData';
+import usersList from '../components/Pages/Users/usersList';
+import DogsApp from '../components/Dogs/Dogs';
 
 
 const baseUrl = '/admin';

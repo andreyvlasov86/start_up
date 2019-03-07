@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Logout from '../../Auth/Logout'
+import Logout from '../Auth/Logout/Logout'
 
 
 export default class Header extends Component {
