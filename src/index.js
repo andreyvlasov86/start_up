@@ -2,10 +2,10 @@ import React from 'react'
 import { render } from 'react-dom'
 import {Provider} from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './reducers'
-import App from './components/App'
+import rootReducer from './store/_config'
+import App from './containers/App/App'
 import 'bootstrap'
-import './assets/css/index.css'
+import './index.css'
 import createSagaMiddleware from 'redux-saga';
 import watchFetchDog from "./store/dogs/sagas";
 

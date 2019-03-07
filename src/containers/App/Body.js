@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Route} from 'react-router-dom';
-import routerConfig from '../constants/routerConfig'
-import Navigation from '../containers/Navigation';
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
+import routerConfig from '../../constants/routerConfig'
+import Navigation from '../../components/Common/Navigation';
+import Header from '../../components/Common/Header';
+import Footer from '../../components/Common/Footer';
 
 
 export default class Body extends Component {

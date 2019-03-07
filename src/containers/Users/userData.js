@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import showUserData from '../../components/Auth/showUserData'
+import showUserData from '../../components/Users/showUserData'
 
 
 const mapStateToProps = state => {

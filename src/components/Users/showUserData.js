@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import Logout from "../../containers/Auth/Logout";
 
 
 export default class showUserData extends Component {

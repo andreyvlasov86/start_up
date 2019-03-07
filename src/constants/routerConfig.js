@@ -1,7 +1,6 @@
-import UserData from '../containers/Auth/UserData';
-import Todo from '../containers/Todo';
-import DataTableView from '../components/common/DataTableView';
-import DogsApp from '../components/Dogs/DogsApp'
+import UserData from '../containers/Users/userData';
+import usersList from '../containers/Users/usersList';
+import DogsApp from '../components/Dogs/'
 
 
 const baseUrl = '/admin';
@@ -20,18 +19,13 @@ const routerConfig = [
 				component: UserData,
 				name: 'User',
 			},
-			{
-				id: 3,
-				path: baseUrl + "/todo",
-				component: Todo,
-				name: 'Todo',
-			},
+
 		]
 	},
 	{
 		id: 4,
 		path: baseUrl + "/dt_users/",
-		component: DataTableView,
+		component: usersList,
         icon: 'fa fa-fw fa-user',
         name: 'Users',
         subitems: []

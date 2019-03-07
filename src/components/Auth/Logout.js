@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux';
-import { logout } from '../../actions/Auth'
+import { logout } from '../../store/auth/actions'
 
 
 class Logout extends Component {

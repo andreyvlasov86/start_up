@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import routerConfig from '../../constants/routerConfig'
+import routerConfig from '../../../constants/routerConfig'
 import SideNav, { NavItem, NavIcon, NavText} from '@trendmicro/react-sidenav';
 import { withRouter } from 'react-router-dom';
 
