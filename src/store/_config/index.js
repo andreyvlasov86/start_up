@@ -1,9 +1,16 @@
-import { combineReducers } from 'redux'
-import auth from '../auth/reducers'
-import dogs from '../dogs/reducers'
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import auth from '../auth/reducers';
+import dogs from '../dogs/reducers';
+import createSagaMiddleware from "redux-saga";
 
 
-export default combineReducers({
-    auth,
-    dogs,
-})
+
+export const sagaMiddleware = createSagaMiddleware();
+
+export const store = createStore(
+    combineReducers({
+        auth,
+        dogs,
+    }),
+    applyMiddleware(sagaMiddleware)
+);

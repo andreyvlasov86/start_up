@@ -1,22 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
 import {Provider} from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './store/_config'
 import App from './components/App/App';
 import 'bootstrap'
-import './index.css'
-import createSagaMiddleware from 'redux-saga';
 import watchFetchDog from "./store/dogs/sagas";
+import watchAuth from "./store/auth/sagas";
+import {store, sagaMiddleware} from "./store/_config";
 
-
-const sagaMiddleware = createSagaMiddleware();
-
-const store = createStore(
-    rootReducer,
-    applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(watchFetchDog);
+sagaMiddleware.run(watchAuth);
+
 
 render(
   <Provider store={store}>

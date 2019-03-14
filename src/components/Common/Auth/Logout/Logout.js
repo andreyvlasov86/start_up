@@ -6,13 +6,7 @@ import { logout } from '../../../../store/auth/actions'
 
 class Logout extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
     handleClick(e) {
-        //e.preventDefault();
         this.props.logout()
     }
 
@@ -25,8 +19,15 @@ class Logout extends Component {
     }
 }
 
+
+const mapStateToProps = state => {
+    return (
+        {data: state.auth }
+    )
+};
+
 const mapDispatchToProps = dispatch => bindActionCreators({
     logout,
     }, dispatch);
 
-export default connect(null, mapDispatchToProps)(Logout);
+export default connect(mapStateToProps, mapDispatchToProps)(Logout);

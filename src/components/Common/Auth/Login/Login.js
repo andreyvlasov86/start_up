@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import { login } from '../../../../store/auth/actions'
 
 
+
 class Login extends Component {
 
     constructor(props) {
@@ -23,14 +24,19 @@ class Login extends Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.username && this.state.password) {
-             this.props.login(this.state.username, this.state.password)
+            this.props.login(this.state.username, this.state.password)
         }
-
     }
 
     render() {
+
+        const status = this.props.data.status;
         return (
             <div className='App-header'>
+                <p style={{color: 'red', fontSize: '0.5em'}}>{status.error ? 'Error, try again' : ''}</p>
+                {status.loading
+                    ? <p>Loading...</p>
+                    :
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <div className="form-group">
                         <label
@@ -58,14 +64,20 @@ class Login extends Component {
                                placeholder='Password'/>
                         <button className='btn btn-primary btn-sm' type="submit">Login</button>
                     </div>
-                </form>
+                </form>}
             </div>
         )
     }
 }
 
+const mapStateToProps = state => {
+    return (
+        {data: state.auth }
+    )
+};
+
 const mapDispatchToProps = dispatch => bindActionCreators({
     login
     }, dispatch);
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

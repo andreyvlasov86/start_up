@@ -1,27 +1,24 @@
-import React, {Component} from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import Login from '../../components/Common/Auth/Login/Login';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Layout from "../Layout/Layout";
+import Layout from "../Common/Layout/Layout";
+import './App.css';
 
 
 
 const mapStateToProps = state => {
-    console.log('state', state);
     return (
-        {data: state.auth.user }
+        {data: state.auth }
     )
 };
 
 
 class App extends Component {
 
-        constructor(props) {
-                super(props);
-        }
 
         render() {
-                const token = this.props.data.token;
+                const token = this.props.data.token.access_token;
                 return(
                     token ? <Router><Layout /></Router> : <Login />
                 )

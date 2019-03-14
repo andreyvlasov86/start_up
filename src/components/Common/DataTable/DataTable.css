@@ -1,0 +1,12 @@
+body {
+	/*display: none;*/
+}
+table.dataTable {
+	width: 100% !important;
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
+table.dataTable thead {
+	border-bottom: 5px solid black;
+}

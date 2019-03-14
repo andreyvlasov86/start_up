@@ -1,18 +1,12 @@
 import React, {Component} from 'react'
-import Navigation from '../../components/Common/NavigationBar/navigationBar';
-import Header from '../../components/Common/Header/Header';
-import Footer from '../../components/Common/Footer/Footer';
-import {routes} from '../../routes/router';
+import Navigation from '../NavigationBar/navigationBar';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import {routes} from '../../../routes/router';
 
 export default class Layout extends Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
-
-		console.log('routes', routes);
 
 		return (
 			<div>

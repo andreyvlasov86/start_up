@@ -1,6 +1,7 @@
 import UserData from '../components/Pages/Users/userData';
 import usersList from '../components/Pages/Users/usersList';
-import DogsApp from '../components/Dogs/Dogs';
+import usersGroupsList from '../components/Pages/Users/usersGroupsList';
+import DogsApp from '../components/Pages/Dogs/Dogs';
 
 
 const baseUrl = '/admin';
@@ -36,6 +37,14 @@ const routerConfig = [
 		component: DogsApp,
         icon: 'fa fa-fw fa-dog',
         name: 'Dogs',
+        subitems: []
+	},
+	{
+		id: 6,
+		path: baseUrl + "/groups/",
+		component: usersGroupsList,
+        icon: 'fa fa-fw fa-users',
+        name: 'Groups',
         subitems: []
 	},
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {fetchDog} from '../../store/dogs/actions'
+import {fetchDog} from '../../../store/dogs/actions'
 import {connect} from 'react-redux';
 
 
